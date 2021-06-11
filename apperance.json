@@ -1,0 +1,66 @@
+{
+    "type": "template",
+    "altText": "this is a carousel template",
+    "template": {
+      "type": "carousel",
+      "imageSize": "cover",
+      "imageAspectRatio": "square",
+      "columns": [
+        {
+          "thumbnailImageUrl": "PROVIDE_URL_FROM_YOUR_SERVER",
+          "text": "pH數值",
+          "actions": [
+            {
+              "type": "postback",
+              "label": "顯示",
+              "text": "動作 1",
+              "data": "資料 1"
+            }
+          ],
+          "imageBackgroundColor": "#BBF1F2"
+        },
+        {
+          "thumbnailImageUrl": "PROVIDE_URL_FROM_YOUR_SERVER",
+          "text": "濁度值",
+          "actions": [
+            {
+              "type": "postback",
+              "label": "顯示",
+              "text": "動作 1",
+              "data": "資料 1"
+            }
+          ],
+          "imageBackgroundColor": "#C3F5FF"
+        },
+        {
+          "thumbnailImageUrl": "PROVIDE_URL_FROM_YOUR_SERVER",
+          "text": "水溫",
+          "actions": [
+            {
+              "type": "postback",
+              "label": "顯示",
+              "text": "動作 1",
+              "data": "資料 1"
+            }
+          ],
+          "imageBackgroundColor": "#9BE7FF"
+        },
+        {
+          "thumbnailImageUrl": "PROVIDE_URL_FROM_YOUR_SERVER",
+          "text": "自動餵食",
+          "actions": [
+            {
+              "type": "datetimepicker",
+              "label": "設定",
+              "data": "資料 1",
+              "mode": "datetime",
+              "initial": "2021-06-11T10:46",
+              "max": "2027-12-31T00:00",
+              "min": "2020-01-01T00:46"
+            }
+          ],
+          "imageBackgroundColor": "#92D7FF"
+        }
+      ]
+    }
+  }
