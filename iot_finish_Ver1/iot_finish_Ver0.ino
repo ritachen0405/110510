@@ -20,7 +20,7 @@ if(tempUnit == 1)
 void setup()
 {
   esp8266_Serial.begin(9600);
-
+  Serial.begin(9600);//設定Baud rate: 9600
   pinMode(A4, INPUT);
     esp8266_Serial.listen();
   WiFi.init(&esp8266_Serial); 
@@ -38,11 +38,15 @@ void setup()
 
 void loop()
 {
-    delay(7200000);
-    esp8266_Serial.listen();
+    delay(7200000);//延遲2hr
+    esp8266_Serial.listen();//wifi
+    int sensorValue = analogRead(A0);//濁度感測(腳位)
+    float voltage = sensorValue * (5.0 / 1024.0);//濁度感測(轉換數值)
     if (esp_client.connect("api.thingspeak.com", 80)) {
-       String  things_request = "GET /update?api_key=VDKLCDOS06UM85WK&field1="+ String(Temperature_LM35T_A4(1))+"\r\n\r\n";
-         esp_client.print(things_request);
+       String  things_request_1 = "GET /update?api_key=VDKLCDOS06UM85WK&field1="+ String(Temperature_LM35T_A4(1))+"\r\n\r\n";//溫度
+       String  things_request_2 = "GET /update?api_key=VDKLCDOS06UM85WK&field2="+ String(voltage)+"\r\n\r\n";//濁度
+         esp_client.print(things_request_1);
+         esp_client.print(things_request_2);
          esp_client.stop();
     }
 
