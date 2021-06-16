@@ -69,12 +69,12 @@ void loop()
     }
     //----------------------------------------------
     esp8266_Serial.listen();//wifi
-    int sensorValue = analogRead(A13);//濁度感測(腳位)
-    float voltage = sensorValue * (5.0 / 1024.0);//濁度感測(轉換數值)
+    int sensorValue = analogRead(A2);//濁度感測(腳位)
+    float voltage_j = sensorValue * (5.0 / 1024.0);//濁度感測(轉換數值)
     if (esp_client.connect("api.thingspeak.com", 80)) {
        
        String  things_request_1 = "GET /update?api_key=VDKLCDOS06UM85WK&field1="+ String(Temperature_LM35T_A4(1))+"\r\n\r\n";//溫度
-       String  things_request_2 = "GET /update?api_key=VDKLCDOS06UM85WK&field2="+ String(voltage)+"\r\n\r\n";//濁度
+       String  things_request_2 = "GET /update?api_key=VDKLCDOS06UM85WK&field2="+ String(voltage_j)+"\r\n\r\n";//濁度
        String  things_request_3 = "GET /update?api_key=VDKLCDOS06UM85WK&field3="+ String(pHValue)+"\r\n\r\n";//PH值
          esp_client.print(things_request_1);
          esp_client.print(things_request_2);
