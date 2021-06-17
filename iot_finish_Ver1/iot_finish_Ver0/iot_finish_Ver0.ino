@@ -2,11 +2,7 @@
 
 #include <SoftwareSerial.h>
 
-SoftwareSerial esp8266_Serial(12,13);
 
-WiFiEspClient esp_client;
-
-int connect_status = WL_IDLE_STATUS;
 
 float Temperature_LM35T_A4(int tempUnit) {
 int readtempValue = analogRead(A4);
@@ -26,19 +22,22 @@ if(tempUnit == 1)
 int pHArray[ArrayLenth];   //Store the average value of the sensor feedback
 int pHArrayIndex=0;    
 //---------------------------------------------------------------PH值
+SoftwareSerial esp8266_Serial(13,12);
+  WiFiEspClient esp_client;
+  int connect_status = WL_IDLE_STATUS;
 void setup()
 {
   
   esp8266_Serial.begin(9600);
   Serial.begin(9600);//設定Baud rate: 9600
   pinMode(A4, INPUT);
-    esp8266_Serial.listen();
+  esp8266_Serial.listen();
   WiFi.init(&esp8266_Serial); 
   if(WiFi.status()==WL_NO_SHIELD) {
    Serial.println(F("Esp8266 module no present"));
    while(true);
    }
-  while(connect_status != WL_CONNECTED) {
+   while(connect_status != WL_CONNECTED) {
    Serial.println(F("Connect to router..."));
    connect_status = WiFi.begin("kunlung","a123056056");
   }
@@ -46,7 +45,7 @@ void setup()
 }
 void loop()
 {
-    delay(7200000);//延遲2hr
+    delay(30000);//延遲2hr
     //----------------------------------------------
     static unsigned long samplingTime = millis();
     static unsigned long printTime = millis();
@@ -68,8 +67,8 @@ void loop()
           printTime=millis();
     }
     //----------------------------------------------
-    esp8266_Serial.listen();//wifi
-    int sensorValue = analogRead(A2);//濁度感測(腳位)
+    //esp8266_Serial.listen();//wifi
+    int sensorValue = analogRead(A0);//濁度感測(腳位)
     float voltage_j = sensorValue * (5.0 / 1024.0);//濁度感測(轉換數值)
     if (esp_client.connect("api.thingspeak.com", 80)) {
        
