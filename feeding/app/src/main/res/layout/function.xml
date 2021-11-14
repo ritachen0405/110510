@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/layout"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#E4F4F3">
 
     <TextView
@@ -22,54 +22,63 @@
         android:textStyle="bold" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btn_quality"
         android:layout_width="183dp"
         android:layout_height="183dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="212dp"
         android:layout_marginBottom="320dp"
-        app:srcCompat="@drawable/水質" />
+        app:srcCompat="@drawable/水質"
+        android:contentDescription="@string/bottom_sheet_behavior"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/btn_water_changing"
         android:layout_width="183dp"
         android:layout_height="183dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="320dp"
-        app:srcCompat="@drawable/換水設定" />
+        app:srcCompat="@drawable/換水設定"
+        android:contentDescription="@string/bottom_sheet_behavior"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btn_height"
         android:layout_width="183dp"
         android:layout_height="183dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="212dp"
         android:layout_marginBottom="43dp"
-        app:srcCompat="@drawable/水位" />
+        app:srcCompat="@drawable/水位"
+        android:contentDescription="@string/bottom_sheet_behavior"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/btn_feeding"
         android:layout_width="183dp"
         android:layout_height="183dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="44dp"
-        app:srcCompat="@drawable/餵食設定" />
+        app:srcCompat="@drawable/餵食設定"
+        android:contentDescription="@string/bottom_sheet_behavior"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton9"
+        android:id="@+id/btn_leave"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="651dp"
-        app:srcCompat="@drawable/leave" />
-
+        app:srcCompat="@drawable/leave"
+        android:contentDescription="@string/bottom_sheet_behavior"
+        tools:ignore="MissingConstraints" />
 
 </RelativeLayout>
