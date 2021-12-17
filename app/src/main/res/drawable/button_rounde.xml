@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 按壓時 -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="15dip" />
+            <stroke android:width="1dip" android:color="@color/teal_700" />
+            <gradient android:angle="-90" android:startColor="@color/teal_700" android:endColor="@color/teal_700"  />
+        </shape>
+    </item>
+
+    <!-- 預設時 -->
+    <item android:color="@color/purple_800">
+        <shape android:shape="rectangle"  >
+            <corners android:radius="15dip" />
+            <stroke android:width="1dip" android:color="@color/purple_800" />
+            <gradient android:angle="-90" android:startColor="@color/purple_800" android:endColor="#000"  />
+        </shape>
+    </item>
+</selector>

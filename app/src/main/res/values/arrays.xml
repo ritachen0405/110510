@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="province1">
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+    </string-array>
+    <string-array name="province2">
+        <item>280</item>
+        <item>320</item>
+        <item>360</item>
+        <item>400</item>
+        <item>440</item>
+        <item>480</item>
+    </string-array>
+</resources>
